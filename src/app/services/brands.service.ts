@@ -48,7 +48,7 @@ export class BrandsService {
   }
 
   getProductsByCategoryId(categoryId: number): Observable<IProduct[]> {
-    const url = `${this.baseApiUrl}/Brand/products-by-category?categoryId=${categoryId}`;
+    const url = `${this.baseApiUrl}/Product/products-by-category?categoryId=${categoryId}`;
     return this.http.get<IProduct[]>(url);
   }
 
@@ -58,7 +58,7 @@ export class BrandsService {
   }
 
   getCategories(): Observable<ICategory[]> {
-    const url = `${this.baseApiUrl}/Brand/categories`;
+    const url = `${this.baseApiUrl}/Category/categories`;
     return this.http.get<ICategory[]>(url);
   }
 
