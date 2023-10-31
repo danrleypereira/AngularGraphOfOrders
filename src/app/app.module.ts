@@ -20,13 +20,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { OrderComponent } from './order/order.component';
+import { BrandComponent } from './brand/brand.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     CustomerComponent,
-    OrderComponent
+    OrderComponent,
+    BrandComponent
   ],
   imports: [
     BrowserModule,
