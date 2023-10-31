@@ -25,6 +25,7 @@ export interface IOrder {
   orderId: number;
   brandId: number;
   orderDate: string;
+  customerId: string;
   // add other order properties as needed
 }
 
