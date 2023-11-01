@@ -39,7 +39,7 @@ export interface IOrder {
 })
 export class BrandsService {
 
-  private baseApiUrl = 'http://0.0.0.0:5091'; // replace with your API endpoint
+  private baseApiUrl = 'http://127.0.0.1:5091'; // replace with your API endpoint
 
   constructor(private http: HttpClient) { }
 

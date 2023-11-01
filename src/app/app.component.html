@@ -1,8 +1,44 @@
-<mat-toolbar class="flex min-w-screen max-w-screen justify-between" color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span class="">Sales Report</span>
-  <span></span>
-</mat-toolbar>
-<router-outlet></router-outlet>
+<mat-sidenav-container class="flex min-w-screen max-w-screen">
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    position="start"
+    opened
+    [fixedInViewport]="true"
+    [fixedTopGap]="0"
+    [fixedBottomGap]="0"
+  >
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/dashboard']">Dashboard</a>
+      <a mat-list-item [routerLink]="['/customer']">Customer</a>
+      <a mat-list-item [routerLink]="['/orders/:brandId']">Orders</a>
+      <a mat-list-item [routerLink]="['/brands/:productId']">Brands</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="flex justify-between" color="primary">
+      <mat-toolbar-row>
+        <button
+          mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with menu icon"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Sales Report</span>
+        <span class="example-spacer"></span>
+        <mat-icon
+          class="example-icon"
+          aria-hidden="false"
+          aria-label="Example user verified icon"
+          >verified_user</mat-icon
+        >
+        <span></span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    <footer>copyright 2023 developed by C corp</footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
