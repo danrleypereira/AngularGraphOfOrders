@@ -54,7 +54,10 @@ export class DashboardComponent implements OnInit {
     );
   }
 
+  selectedCategory: any = null;
+  selectedProduct: any = null;
   categorySelected(categoryId: number): void {
+    this.selectedCategory = categoryId;
     this.brandsService.getProductsByCategoryId(categoryId).subscribe(
       data => {
         this.selected.category = this.categories.find(c => c.categoryId === categoryId)?.categoryName || '';
@@ -65,6 +68,7 @@ export class DashboardComponent implements OnInit {
   }
 
   productSelected(productId: number): void {
+    this.selectedProduct = productId;
     this.brandsService.getBrandsByProductId(productId).subscribe(
       data => {
         this.selected.product = this.products.find(p => p.productId === productId)?.productName || '';
