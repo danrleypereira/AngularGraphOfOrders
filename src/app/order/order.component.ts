@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BrandsService, IOrder } from "../services/brands.service";
+import { BrandsService, IOrder } from "../services/brand/brands.service";
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 

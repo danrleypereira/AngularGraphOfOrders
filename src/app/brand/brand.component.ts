@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BrandsService, IBrand } from '../services/brands.service';
+import { BrandsService, IBrand } from '../services/brand/brands.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
