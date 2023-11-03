@@ -4,7 +4,6 @@ import {
   CustomerServices,
   ICustomer,
 } from '../services/customer/customer.service';
-
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -14,10 +13,11 @@ export class CustomerComponent implements OnInit {
   public customers!: ICustomer[];
   public customer!: ICustomer;
   public customerId!: number;
+  selectedCustomer: any;
 
   constructor(
     private customerServices: CustomerServices,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {}
 
   ngOnInit() {
@@ -48,7 +48,6 @@ export class CustomerComponent implements OnInit {
       (error) => console.error(error)
     );
   }
-
   updateCustomer(id: number, name: string, email: string) {
     this.customerServices.updateCustomer(id, name, email).subscribe(
       (customer) => {
@@ -63,6 +62,6 @@ export class CustomerComponent implements OnInit {
         this.customer = customer;
       },
       (error) => console.error(error)
-    );;
+    );
   }
 }

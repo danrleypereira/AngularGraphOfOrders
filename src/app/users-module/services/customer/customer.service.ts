@@ -33,6 +33,7 @@ export class CustomerServices{
         const body = { name, email }; 
         return this.http.post<ICustomer>(url, body);
     }
+    
     updateCustomer(customerId: number, name: string, email: string) {
         const url = `${this.baseApiUrl}/Customer/${customerId}`;
         const body = { name, email }; 
