@@ -14,19 +14,22 @@ import { FormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 
-import { CustomerComponent } from './customer/customer.component';
+
+import { CustomerComponent } from './users-module/customer/customer.component';
 import { InventoryModule } from './inventory-module/inventory.module';
+import { UsersModule } from './users-module/users.module';
 
 @NgModule({
-  declarations: [AppComponent, CustomerComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     InventoryModule,
-    MatToolbarModule,
+    UsersModule,
     MatButtonModule,
     MatIconModule,
     NgFor,
@@ -34,6 +37,7 @@ import { InventoryModule } from './inventory-module/inventory.module';
     MatSidenavModule,
     MatListModule,
     FormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

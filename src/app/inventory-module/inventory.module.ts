@@ -7,6 +7,7 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { BrandsService } from './services/brand/brands.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
     MatSelectModule, 
     MatInputModule, 
   ],
+  providers: [BrandsService],
   exports: [BrandComponent]
 })
 export class InventoryModule {}

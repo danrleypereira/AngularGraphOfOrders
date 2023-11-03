@@ -8,21 +8,13 @@ export interface ICustomer {
     email: string
   }
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
+
 export class CustomerServices{
     private baseApiUrl = 'http://127.0.0.1:5091';
 
     constructor(private http: HttpClient) { }
 
-    // getCustomers(itemsPerPage: number, page: number): Observable<ICustomer[]> {
-    //     const url = `${this.baseApiUrl}/Customer`;
-    //     const params = new HttpParams()
-    //       .set('itemsPerPage', itemsPerPage.toString())
-    //       .set('page', page.toString());
-    //     return this.http.get<ICustomer[]>(url, { params });
-    //   }
     getCustomers(): Observable<ICustomer[]> {
         const url = `${this.baseApiUrl}/Customer`;
         console.log({CustomerService: [`getting customer`, url]});

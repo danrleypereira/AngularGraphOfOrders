@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import {
   CustomerServices,
@@ -18,7 +17,6 @@ export class CustomerComponent implements OnInit {
 
   constructor(
     private customerServices: CustomerServices,
-    private http: HttpClient,
     private route: ActivatedRoute
   ) {}
 
@@ -50,38 +48,7 @@ export class CustomerComponent implements OnInit {
       (error) => console.error(error)
     );
   }
-  // getCustomerById(id: number) {
-  //   this.http
-  //     .get<ICustomer>(`http://localhost:5091/Customer/${id}`)
-  //     .subscribe((data) => {
-  //       this.customer = data; // Wrap the single customer in an array to reuse the existing HTML template
-  //     });
-  // }
 
-  // getCustomers(id: number) {
-  //   this.customerServices.getCustomerById(this.customerId)
-  //     .subscribe((data: ICustomer[]) => {
-  //       this.customers = data;
-  //     });
-  // }
-
-  // addCustomer(name: string, email: string) {
-  //   this.http.post('http://127.0.0.1:5091/Customer', {
-  //     name: name,
-  //     email: email
-  //   }).subscribe(() => {
-  //     this.getCustomers();
-  //   });
-  // }
-
-  // updateCustomer(id: number, name: string, email: string) {
-  //   this.http.put(`http://localhost:5091/Customer/${id}`, {
-  //     name: name,
-  //     email: email
-  //   }).subscribe(() => {
-  //     this.getCustomers();
-  //   });
-  // }
   updateCustomer(id: number, name: string, email: string) {
     this.customerServices.updateCustomer(id, name, email).subscribe(
       (customer) => {
