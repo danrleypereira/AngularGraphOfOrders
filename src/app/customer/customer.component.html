@@ -5,7 +5,6 @@
     <button (click)="updateCustomer(customer.id, customer.name, customer.email)">Update</button>
   </li>
 </ul>
-
-<input type="text" [(ngModel)]="this.customer.name" placeholder="Name" />
-<input type="text" [(ngModel)]="this.customer.email" placeholder="Email" />
+<input type="text" [(ngModel)]="customer && customer.name" placeholder="Name" />
+<input type="text" [(ngModel)]="customer && customer.email" placeholder="Email" />
 <button (click)="addCustomer(this.customer.name, this.customer.email)">Add Customer</button>
