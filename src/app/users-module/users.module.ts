@@ -7,6 +7,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoggingInterceptor } from './logging-interceptor.service';
 @NgModule({
   declarations: [ CustomerComponent ],
   imports: [
@@ -19,7 +21,14 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     ReactiveFormsModule
   ],
-  providers: [CustomerServices],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingInterceptor,
+      multi: true,
+    },
+    CustomerServices
+  ],
   exports: [CustomerComponent]
 })
 export class UsersModule { }
