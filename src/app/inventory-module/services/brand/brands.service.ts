@@ -11,14 +11,12 @@ export interface IProduct {
   productId: number;
   productName: string;
   categoryId: number;
-  // add other product properties as needed
 }
 
 export interface IBrand {
   brandId: number;
   brandName: string;
   productId: number;
-  // add other brand properties as needed
 }
 
 export interface IOrder {
@@ -26,20 +24,12 @@ export interface IOrder {
   brandId: number;
   orderDate: string;
   customerId: string;
-  // add other order properties as needed
 }
 
-
-// interface IBrand {
-
-// }
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class BrandsService {
 
-  private baseApiUrl = 'http://0.0.0.0:5091'; // replace with your API endpoint
+  private baseApiUrl = 'http://127.0.0.1:5091'; 
 
   constructor(private http: HttpClient) { }
 
@@ -63,5 +53,4 @@ export class BrandsService {
     return this.http.get<ICategory[]>(url);
   }
 
-  // Add other methods as needed to interact with your API
 }

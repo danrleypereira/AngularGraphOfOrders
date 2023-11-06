@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BrandsService, ICategory, IBrand, IOrder, IProduct } from '../services/brands.service';
+import { BrandsService, ICategory, IBrand, IOrder, IProduct } from '../services/brand/brands.service';
 
 interface ChartDataPoint {
   label: string;
@@ -54,17 +54,21 @@ export class DashboardComponent implements OnInit {
     );
   }
 
+  selectedCategory: any = null;
+  selectedProduct: any = null;
   categorySelected(categoryId: number): void {
+    this.selectedCategory = categoryId;
     this.brandsService.getProductsByCategoryId(categoryId).subscribe(
-      data => {
+      response => {
         this.selected.category = this.categories.find(c => c.categoryId === categoryId)?.categoryName || '';
-        this.products = data;
+        this.products = response;
       },
       error => console.error(error)
     );
   }
 
   productSelected(productId: number): void {
+    this.selectedProduct = productId;
     this.brandsService.getBrandsByProductId(productId).subscribe(
       data => {
         this.selected.product = this.products.find(p => p.productId === productId)?.productName || '';

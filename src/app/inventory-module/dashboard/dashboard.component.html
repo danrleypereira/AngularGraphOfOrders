@@ -1,4 +1,4 @@
-<div class="mx-40 mt-10 flex justify-between space-x-3">
+<div class="md:mx-40 mt-10 flex md:space-x-12 flex-col flex md:flex-row mx-4">
   <mat-form-field>
     <mat-label>Category</mat-label>
     <mat-select (selectionChange)="categorySelected($event.value)">
@@ -10,7 +10,7 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field *ngIf="selectedCategory">
     <mat-label>Product</mat-label>
     <mat-select (selectionChange)="productSelected($event.value)">
       <mat-option *ngFor="let product of products" [value]="product.productId">
@@ -18,7 +18,7 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field *ngIf="selectedProduct">
     <mat-label>Brand</mat-label>
     <mat-select (selectionChange)="brandSelected($event.value)">
       <mat-option *ngFor="let brand of brands" [value]="brand.brandId">
@@ -35,5 +35,4 @@
     *ngIf="showChart && hasOrders()"
     [options]="chartOptions"
   ></canvasjs-chart>
-
 </div>

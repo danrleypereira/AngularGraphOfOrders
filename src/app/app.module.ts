@@ -6,46 +6,40 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { CustomerComponent } from './customer/customer.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
 import { NgFor } from '@angular/common';
-import { MatSelectModule } from '@angular/material/select';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 
-import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
-import { OrderComponent } from './order/order.component';
-import { BrandComponent } from './brand/brand.component';
+
+import { CustomerComponent } from './users-module/customer/customer.component';
+import { InventoryModule } from './inventory-module/inventory.module';
+import { UsersModule } from './users-module/users.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DashboardComponent,
-    CustomerComponent,
-    OrderComponent,
-    BrandComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
+    InventoryModule,
+    UsersModule,
     MatButtonModule,
     MatIconModule,
-    MatFormFieldModule, 
-    MatSelectModule, 
-    NgFor, 
-    MatInputModule, 
+    NgFor,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
     FormsModule,
-    CanvasJSAngularChartsModule
+    MatCardModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

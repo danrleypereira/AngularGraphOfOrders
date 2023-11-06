@@ -1,0 +1,12 @@
+<h2>Customers</h2>
+<div *ngFor="let customer of customers">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ customer.name }}</mat-card-title>
+      <mat-card-subtitle>{{ customer.email }}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>
+<input type="text" [(ngModel)]="customer && customer.name" placeholder="Name" />
+<input type="text" [(ngModel)]="customer && customer.email" placeholder="Email" />
+<button (click)="addCustomer(this.customer.name, this.customer.email)">Add Customer</button>
