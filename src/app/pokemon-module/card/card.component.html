@@ -1,0 +1,13 @@
+<div *ngIf="card | async as card">
+    <h2>{{ card.name }}</h2>
+    <img [src]="card.images.large" alt="{{ card.name }}">
+    <p><strong>Type:</strong> {{ card.types.join(', ') }}</p>
+    <p><strong>HP:</strong> {{ card.hp }}</p>
+    <p><strong>Abilities:</strong></p>
+    <ul>
+        <li *ngFor="let ability of card.abilities">
+            {{ ability.name }}: {{ ability.text }}
+        </li>
+    </ul>
+    <!-- Add more details as needed -->
+</div>

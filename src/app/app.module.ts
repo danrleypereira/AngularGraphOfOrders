@@ -17,9 +17,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 
 
+// Modulos
+
 import { CustomerComponent } from './users-module/customer/customer.component';
 import { InventoryModule } from './inventory-module/inventory.module';
 import { UsersModule } from './users-module/users.module';
+import { PokemonModule } from './pokemon-module/pokemon.module';
 
 @NgModule({
   declarations: [AppComponent],

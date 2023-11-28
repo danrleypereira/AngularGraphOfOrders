@@ -4,12 +4,14 @@ import { DashboardComponent } from './inventory-module/dashboard/dashboard.compo
 import { CustomerComponent } from './users-module/customer/customer.component';
 import { OrderComponent } from './inventory-module/order/order.component';
 import { BrandComponent } from './inventory-module/brand/brand.component';
+import { PokemonCardComponent } from './pokemon-module/card/card.component';
 
 const routes: Routes = [
-  {path: "dashboard", component: DashboardComponent},
-  {path: "customer", component: CustomerComponent},
-  {path: "orders/:brandId", component: OrderComponent},
-  {path: "brands/:productId", component: BrandComponent},
+  { path: "dashboard", component: DashboardComponent },
+  { path: "customer", component: CustomerComponent },
+  { path: "orders/:brandId", component: OrderComponent },
+  { path: "brands/:productId", component: BrandComponent },
+  { path: 'card/:id', component: PokemonCardComponent },
 ];
 
 @NgModule({
